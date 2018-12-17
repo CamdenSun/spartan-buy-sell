@@ -1,0 +1,135 @@
+<!--Notes: 
+- Sign in form is a bit buggy. Press sign in twice to properly sign in. If you know how to fix this I need help.
+- It would be a good idea to move the "sign up" and "log in" forms onto separate file. Then change the "hrefs" on the "sign up" and "log in" buttons to match those files.
+- Please add the logo into span with the class "mdl-layout__title" using the img tag.
+- When you press "Sign Up", it will upload that information into the firebase console. You can check this by going to the firebase console.
+- Though it warns users if they input incorrect data, it won't actually stop the form submission.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SBS - Sign In</title> 
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCXtqapHkeJOAwBjfX8C7z8c0NhDbgiYas",
+        authDomain: "spartanbuysell.firebaseapp.com",
+        databaseURL: "https://spartanbuysell.firebaseio.com",
+        projectId: "spartanbuysell",
+        storageBucket: "spartanbuysell.appspot.com",
+        messagingSenderId: "543261815218"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!--Javascript file-->
+    <script src='file:///C:/Users/Camden/Documents/Github/src/validation.js'></script>
+    <script src='signUp.js'></script>
+    <!--Material Design Lite-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Change color theme here-->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!--CSS file-->
+    <link rel='stylesheet' href='signUp.css'>
+  </head>
+  <body>
+    <div class='mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button'>
+      <!--header with navbar, search bar, and sign up/log in buttons-->
+      <header class="mdl-layout__header">
+        <div class="mdl-layout-icon"></div>
+        <div class="mdl-layout__header-row">
+          <!--Header Title (add logo)-->
+          <span class="mdl-layout__title">SBS</span>
+          <!--Navigation Links-->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Profile</a>
+            <a class="mdl-navigation__link" href="#">Market Place</a>
+            <a class="mdl-navigation__link" href="#">Sell Item</a>
+          </nav>
+          <div class="mdl-layout-spacer"></div>
+          <!-- Expandable Search Bar -->
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="sample6" placeholder='Search...'>
+              <label class="mdl-textfield__label" for="sample-expandable">Search...</label>
+            </div>
+          </div>
+          <!--Sign up and Log in buttons-->
+          <div id='headerBtn'>
+            <a class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent' href='#'>Sign Up</a>
+            <a class='mdl-button mdl-js-button' href='#'>Log In</a>
+          </div>
+        </div>
+      </header>
+      <!--page content like forms here-->
+      <main class='mdl-layout__content'>
+        <div class='page-content'>
+          <!--Sign Up form-->
+          <div id='signUp'>
+              <h3>Sign Up</h3>
+              <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+                <input id='suName' class='mdl-textfield__input' pattern='[A-Za-z0-9_]{6,20}'>
+                <label class='mdl-textfield__label' for='suName'>Username</label>
+                <label class='mdl-textfield__error'>Contains a character that is not a letter or number or is not between 6-20 characters!</label>
+              </div>
+              <br>
+              <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+                <input id='suEmail' type='email' class='mdl-textfield__input' pattern='.+@mvla.net'>
+                <label class='mdl-textfield__label' for='suEmail'>Email</label>
+                <label class='mdl-textfield__error'>Is not a valid mvla email!</label>
+              </div>
+              <br>
+              <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+                <input id='suPass' type='password' class='mdl-textfield__input' pattern='.{8,}'>
+                <label class='mdl-textfield__label'>Password</label>
+                <label class='mdl-textfield__error'>Password must be more than 8 characters!</label>
+              </div>
+              <br>
+              <button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' onclick='createUser()'>Sign Up</button>
+              <a href='Github/nou/src/homePage/home.html'>Already have an account? Log in here!</a>
+          </div>
+          <br>
+          <!--log in form-->
+          <div id='logIn'>
+            <h3>Log In</h3>
+            <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+              <input id='liName' class='mdl-textfield__input' type='text'>
+              <label class='mdl-textfield__label' for='liName'>Username</label>
+            </div>
+            <br>
+            <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+              <input id='liPass' class='mdl-textfield__input' type='password'>
+              <label class='mdl-textfield__label' for='liPass'>Password</label>
+            </div>
+            <br>
+            <button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' onclick='logIn()'>Log In</button>
+          </div>
+          <div class='mdl-button mdl-js-button mdl-button--raised'>Log Out</div>
+        </div>
+      </main>
+      <!--footer w/ important links-->
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">Spartan Buy and Sell</div>
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+        </div>
+        <!--social media tags-->
+        <div class="mdl-mini-footer__right-section">
+            <ul class="mdl-mini-footer__link-list">
+              <li><div class="mdl-logo">Contacts</div></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
+    </div>
+  </body>
+</html>

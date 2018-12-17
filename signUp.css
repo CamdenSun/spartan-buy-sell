@@ -1,0 +1,7 @@
+.page-content{
+	margin: 30px;
+}
+.mdl-navigation__link:hover{
+	background-color: gray;
+	color: white;
+}
