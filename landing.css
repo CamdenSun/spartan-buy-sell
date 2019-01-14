@@ -5,8 +5,7 @@
   top: 25vh;
 }
 .mdl-navigation__link{
-font-family: Helvetica;,ans-se
-font-Bold;style: 
+font-family: Helvetica;
 
 }
 #logo {
@@ -16,4 +15,8 @@ font-Bold;style:
   width: 30vw;
   height: 30vh;
 
+}
+
+#searchbarinput{
+  z-index: 10;
 }
