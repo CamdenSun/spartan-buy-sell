@@ -1,7 +1,7 @@
 #searchbar {
   margin: auto;
   text-align: center;
-  position:relative;
+  /*position:relative;*/
   top: 25vh;
 }
 .mdl-navigation__link{
@@ -17,6 +17,7 @@ font-family: Helvetica;
 
 }
 
-#searchbarinput{
-  z-index: 10;
+#searchbarinput {
+  position: absolute;
+  z-index: 100;
 }
