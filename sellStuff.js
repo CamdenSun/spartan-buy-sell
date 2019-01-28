@@ -47,13 +47,19 @@ $(document).ready(function(){
 				id.value = "itemInfo";
 				div.setAttributeNode(id);
 				$("body").append(div);
+				/*var blank = document.createElement("P");
+				var blankId = document.createAttribute("id");
+				blankId.value = "blankSpace";
+				blank.setAttributeNode(blankId);
+				$("#itemInfo").append(blank);*/
 			}
-			var itemName = $("<h3></h3>").text(search.val());
-			var nodeUser = $("<p></p>").text("Username: "+username);
-			var nodeDesc = $("<p></p>").text("Description: "+description);
-			var nodePrice = $("<p></p>").text("Price: $"+price);
+			console.log(capFirstLetter("hello my dude"));
+			var itemName = "<h3>"+capFirstLetter(search.val())+"</h3>";
+			var nodeUser = "<p>Username: "+username+"</p>"
+			var nodeDesc = "<p>Description: "+description+"</p>";
+			var nodePrice = "<p>Price: $"+price+"</p>";
 			var nodeImage = "<img width='100px' src='"+image+"'>";
-			$("#itemInfo").after(itemName, nodeUser, nodeDesc, nodePrice, nodeImage);
+			$("#itemInfo").html(itemName + nodeUser + nodeDesc + nodePrice + nodeImage);
 		});
 	});
 });
