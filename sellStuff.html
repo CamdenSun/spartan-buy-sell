@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCXtqapHkeJOAwBjfX8C7z8c0NhDbgiYas",
+	    authDomain: "spartanbuysell.firebaseapp.com",
+	    databaseURL: "https://spartanbuysell.firebaseio.com",
+	    projectId: "spartanbuysell",
+	    storageBucket: "spartanbuysell.appspot.com",
+	    messagingSenderId: "543261815218"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src='sellStuff.js'></script>
+</head>
+<body>
+	<!--<button onclick='googleLogIn()'>Google Log In</button><div style='margin-top: 100px'>-->
+	<div id='createItem'>
+		Username: <input id='username'><br>
+		Item Name: <input id='itemName'><br>
+		Description: <textarea id='description'></textarea><br>
+		Price: <input id='price'><br>
+		Image URL: <input id='image'><br>
+		<button id='itemSubmit'>Submit</button>
+	</div>
+	<div style='padding-top: 50px;'></div>
+	<div id='searchItem'>
+		<input id='searchBar'>
+		<button id='searchSubmit'>Submit</button>
+	</div>
+</body>
+</html>

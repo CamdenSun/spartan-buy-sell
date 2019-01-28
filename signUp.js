@@ -10,20 +10,15 @@ if (user != null) {
   	document.getElementById("headerBtn").innerHTML = '<nav class="mdl-navigation"><a class="mdl-navigation__link" href="#">Hello' + email + '!</a></nav>';
 }
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-  .then(function() {
-    // Existing and future Auth states are now persisted in the current
-    // session only. Closing the window would clear any existing state even
-    // if a user forgets to sign out.
-    // ...
-    // New sign-in will be persisted with session persistence.
-    return firebase.auth().signInWithEmailAndPassword(email, password);
-  })
-  .catch(function(error) {
-    console.log(error.code);
-    console.log(error.message);
+  	.then(function() {
+  		return firebase.auth().signInWithEmailAndPassword(email, password);
+  	})
+  	.catch(function(error) {
+    	console.log(error.code);
+    	console.log(error.message);
 });
 function createUser(){
-	//let suuName = document.getElementById('suName').value;
+	let suuName = document.getElementById('suName').value;
 	let suemail = document.getElementById('suEmail').value;
 	let supassword = document.getElementById('suPass').value;
 	/*if (required(uName, "Username", "suName") && required(email, "Email", "suEmail") && required(password, "Password", "suPass")){
@@ -49,7 +44,6 @@ function createUser(){
           alert(errorMessage);
         }
     });
-    alert("Account Created")
 }
 function logIn(){
 	let liemail = document.getElementById('liEmail').value;
@@ -90,3 +84,10 @@ function logOut(){
 		document.getElementById("headerBtn").innerHTML = "<a class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent' href='#'>Sign Up</a> <a class='mdl-button mdl-js-button' href='#'>Log In</a>"
 	}
 }
+var item = db.ref("items/soccer_ball");
+item.set({
+	user: "Camden",
+	price: 25,
+	description: "flavorful",
+	image: "image.png"
+});
