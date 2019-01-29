@@ -68,13 +68,13 @@ body{
   float: left;
   display: block;
   background-color: rgb(255, 217, 109, 0);
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
-  font-size: 1.666vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-size: 0.83333vw;
   padding-left: 2vw;
   padding-right: 2vw;
   margin-left: 0vw;
   margin-top:0;
   font-family: 'Roboto', Helvetica, sans-serif;
-  color: rgb(255, 203, 60)
+  color: rgb(50, 50, 50)
 }
