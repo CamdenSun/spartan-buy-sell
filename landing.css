@@ -47,6 +47,7 @@ a:hover{
   width: 100vw;
   height: 3vw;
   margin-left: 0;
+  border-bottom: rgb(94, 94, 94) solid 3px;
 }
 
 body{
