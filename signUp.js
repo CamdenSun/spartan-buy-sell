@@ -84,10 +84,3 @@ function logOut(){
 		document.getElementById("headerBtn").innerHTML = "<a class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent' href='#'>Sign Up</a> <a class='mdl-button mdl-js-button' href='#'>Log In</a>"
 	}
 }
-var item = db.ref("items/soccer_ball");
-item.set({
-	user: "Camden",
-	price: 25,
-	description: "flavorful",
-	image: "image.png"
-});

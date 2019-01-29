@@ -33,7 +33,7 @@ $(document).ready(function(){
 		});
 		//}
 	});
-	$("#searchSubmit").click(function(){
+	/*$("#searchSubmit").click(function(){
 		var search = $("#searchBar");
 		var key = db.ref("/items/"+search.val());
 		key.once("value").then(function(snap){
@@ -47,11 +47,6 @@ $(document).ready(function(){
 				id.value = "itemInfo";
 				div.setAttributeNode(id);
 				$("body").append(div);
-				/*var blank = document.createElement("P");
-				var blankId = document.createAttribute("id");
-				blankId.value = "blankSpace";
-				blank.setAttributeNode(blankId);
-				$("#itemInfo").append(blank);*/
 			}
 			console.log(capFirstLetter("hello my dude"));
 			var itemName = "<h3>"+capFirstLetter(search.val())+"</h3>";
@@ -61,5 +56,5 @@ $(document).ready(function(){
 			var nodeImage = "<img width='100px' src='"+image+"'>";
 			$("#itemInfo").html(itemName + nodeUser + nodeDesc + nodePrice + nodeImage);
 		});
-	});
+	});*/
 });
