@@ -12,12 +12,6 @@
   float: left;
   display: block;
   background-color: rgb(255, 217, 109, 0);
-  /*transform: translate(0%, 0%);
-  padding-top: 1vw;
-  padding-bottom: 1vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  font-size: 3.1945vw;*/
   padding-top: 0.5vw;
   padding-bottom: 0.5vw;
   font-size: 1.666vw;
@@ -25,11 +19,16 @@
   padding-right: 2vw;
   margin-left: 0vw;
   margin-top:0;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  color: rgb(94, 94, 94);
 }
 
 a:hover{
   background-color: rgb(255, 217, 109, 1.0);
+}
+
+#signin{
+  float: right;
 }
 
 #barlogo {
@@ -52,4 +51,30 @@ a:hover{
 
 body{
   margin:0;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#bottombardiv{
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(94, 94, 94);
+  width: 100vw;
+  height: 3vw;
+  margin-left: 0;
+}
+
+.bottombar {
+  float: left;
+  display: block;
+  background-color: rgb(255, 217, 109, 0);
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  font-size: 1.666vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin-left: 0vw;
+  margin-top:0;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  color: rgb(255, 203, 60)
 }

@@ -26,45 +26,25 @@
     <script src='file:///C:/Users/Camden/Documents/Github/src/validation.js'></script>
     <script src='signUp.js'></script>
     <!--Material Design Lite-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
     <!--Change color theme here-->
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>-->
     <!--CSS file-->
     <!--<link rel='stylesheet' href='signUp.css'>-->
+    <link href="landing.css" rel="stylesheet" type="text/css" />
+
   </head>
   <body>
-    <div class='mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button'>
-      <!--header with navbar, search bar, and sign up/log in buttons-->
-      <header class="mdl-layout__header">
-        <div class="mdl-layout-icon"></div>
-        <div class="mdl-layout__header-row">
-          <!--Header Title (add logo)-->
-          <span class="mdl-layout__title">SBS</span>
-          <!--Navigation Links-->
-          <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="#">Profile</a>
-            <a class="mdl-navigation__link" href="#">Market Place</a>
-            <a class="mdl-navigation__link" href="#">Sell Item</a>
-          </nav>
-          <div class="mdl-layout-spacer"></div>
-          <!-- Expandable Search Bar -->
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-              <i class="material-icons">search</i>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="sample6" placeholder='Search...'>
-              <label class="mdl-textfield__label" for="sample-expandable">Search...</label>
-            </div>
-          </div>
-          <!--Sign up and Log in buttons-->
-          <div id='headerBtn'>
-            <a class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent' href='#'>Sign Up</a>
-            <a class='mdl-button mdl-js-button' href='#'>Log In</a>
-          </div>
-        </div>
-      </header>
+    <div id = "topbardiv">
+      <img id = "barlogo" class = "topbar" src = "SBS LOGO.png">
+      <h1><a class = "topbar">Marketplace</a></h1>
+      <h1><a class = "topbar">Sell</a></h1>
+      <h1><a class = "topbar">History</a></h1>
+      <h1><a class = "topbar">About</a></h1>
+      <h1><a class = "topbar" id = "signin" href = "signUp.html">Sign In</a></h1>
+      <!--<h1><a class = "topbar">Link 3</a></h1>-->
+    </div>
       <!--page content like forms here-->
       <main class='mdl-layout__content'>
         <div class='page-content'>
