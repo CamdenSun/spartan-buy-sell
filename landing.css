@@ -78,3 +78,24 @@ body{
   font-family: 'Roboto', Helvetica, sans-serif;
   color: rgb(50, 50, 50)
 }
+
+#searchbar{
+  width: 60vw;
+  height: 5vw;
+  border-radius: 2.5vw;
+  border: rgb(94, 94, 94) solid 2px;
+  top: 50vh;
+  margin-left: 19vw;
+  margin-right: 19vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-size: 3vw;
+  color: rgb(50, 50, 50);
+}
+
+#biglogo {
+  width: 30vw;
+  height: auto;
+  margin-left: 35vw;
+  margin-right:35vw;
+}
