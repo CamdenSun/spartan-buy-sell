@@ -60,4 +60,4 @@ $(document).ready(function(){
 			$("#itemInfo").html(itemName + nodeUser + nodeDesc + nodePrice + nodeImage);
 		});
 	});
-})
+});

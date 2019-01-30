@@ -1,22 +1,19 @@
 const db = firebase.database();
 var user = firebase.auth().currentUser;
 var name, email, photoUrl, uid, emailVerified;
-if (user != null) {
-  	name = user.displayName;
-  	email = user.email;
-  	photoUrl = user.photoURL;
-  	emailVerified = user.emailVerified;
-  	uid = user.uid;
-  	document.getElementById("headerBtn").innerHTML = '<nav class="mdl-navigation"><a class="mdl-navigation__link" href="#">Hello' + email + '!</a></nav>';
+if (user == null) {
+  	console.log("Not logged in.");
+} else {
+	console.log("Logged in.")
 }
-firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+/*firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
   	.then(function() {
   		return firebase.auth().signInWithEmailAndPassword(email, password);
   	})
   	.catch(function(error) {
     	console.log(error.code);
     	console.log(error.message);
-});
+});*/
 function createUser(){
 	let suuName = document.getElementById('suName').value;
 	let suemail = document.getElementById('suEmail').value;
