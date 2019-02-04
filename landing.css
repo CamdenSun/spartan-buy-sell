@@ -12,15 +12,20 @@
   float: left;
   display: block;
   background-color: rgb(255, 217, 109, 0);
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
-  font-size: 1.666vw;
+  padding-top: 1vw;
+  padding-bottom: .8vw;
+  font-size: 1vw;
+  font-weight: 300;
   padding-left: 2vw;
   padding-right: 2vw;
   margin-left: 0vw;
   margin-top:0;
   font-family: 'Roboto', Helvetica, sans-serif;
-  color: rgb(94, 94, 94);
+  color: rgb(50, 50, 50);
+}
+
+a{
+  transition: background-color 0.5s ease-in-out;
 }
 
 a:hover{
@@ -46,7 +51,9 @@ a:hover{
   width: 100vw;
   height: 3vw;
   margin-left: 0;
-  border-bottom: rgb(94, 94, 94) solid 3px;
+  /*border-bottom: rgb(50, 50, 50) solid 3px;*/
+  box-shadow: 2px 2px 5px grey;
+
 }
 
 body{
@@ -80,16 +87,16 @@ body{
 }
 
 #searchbar{
-  width: 60vw;
-  height: 5vw;
+  width: 30vw;
+  height: 2vw;
   border-radius: 2.5vw;
   border: rgb(94, 94, 94) solid 2px;
   top: 50vh;
-  margin-left: 19vw;
-  margin-right: 19vw;
+  margin-left: 34vw;
+  margin-right: 34vw;
   padding-left: 1vw;
   padding-right: 1vw;
-  font-size: 2.5vw;
+  font-size: 1vw;
   color: rgb(50, 50, 50);
 }
 
