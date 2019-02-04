@@ -78,6 +78,7 @@ function logIn(){
 	} else {
 		alert('Incorrect username or password');
 	}*/
+	window.location.replace("index.html");
 }
 function logOut(){
 	firebase.auth().signOut().then(function() {
