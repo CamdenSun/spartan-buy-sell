@@ -57,14 +57,16 @@ a:hover{
 }
 
 body{
+  position: relative;
   margin:0;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 105vh;
 }
 
 #bottombardiv{
-  position: fixed;
+  position: absolute;
   bottom: 0;
+  margin-bottom: 0;
   background-color: rgb(94, 94, 94);
   width: 100vw;
   height: 3vw;
@@ -90,7 +92,8 @@ body{
   width: 30vw;
   height: 2vw;
   border-radius: 2.5vw;
-  border: rgb(94, 94, 94) solid 2px;
+  /* border: rgb(94, 94, 94) solid 2px; */
+  background-color: rgb(255, 217, 109, 1.0);
   top: 50vh;
   margin-left: 34vw;
   margin-right: 34vw;
@@ -101,8 +104,8 @@ body{
 }
 
 #biglogo {
-  width: 30vw;
+  width: 20vw;
   height: auto;
-  margin-left: 35vw;
-  margin-right:35vw;
+  margin-left: 39vw;
+  margin-right:39vw;
 }
