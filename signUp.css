@@ -5,3 +5,7 @@
 	background-color: gray;
 	color: white;
 }
+.liInput, .suInput{
+	border-color: black;
+	border-width: 5px;
+}

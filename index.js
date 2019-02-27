@@ -8,30 +8,26 @@ $(document).ready(function(){
 			if (document.getElementById("message") == null){
 				var div = "<div id=\"message\" class=\"info\"></div>";
 				$("#searchbardiv").append(div);
-				$("#message").append("<h3 id=\"iName\"></h3><br><p id=\"iUname\"></p><br><p id=\"iDesc\"></p><br><p id=\"iPrice\"><p><br><img id=\"iImg\" width=\"100px\">");
+				var disp = $("<h3></h3>").attr("id", "iName");
+				var user = $("<p></p>").attr("id", "iUname");
+				var desc = $("<p></p>").attr("id", "iDesc");
+				var price = $("<p></p>").attr("id", "iPrice");
+				var img = $("<img>").attr("id", "iImg");
+				$("#message").append(disp, user, desc, price, img);
 			}
 			//I need to fix what is below
 			itemRef.once("value", function(snap){
 				item = snap.val();
 				if (item != null){
-					var disp = item.display;
-					var user = item.username;
-					var desc = item.description;
-					var price = item.price;
-					var img = item.image;
-					console.log("disp");
-					
-					$("#iName").text(disp);
-					$("#iUname").text(user);
-					$("#iDesc").text(desc);
-					$("#iPrice").text("$" + price);
-					//console.log($("#iImg"));
-					document.getElementById("iImg").setAttribute("src", img);
-				
+					$("#iName").text(item.display);
+					$("#iUname").text("Owner: " + item.username);
+					$("#iDesc").text("Description: " + item.description);
+					$("#iPrice").text("Price: $" + item.price);
+					$("#iImg").attr("src", item.image).attr("style", "width: 50px");
 				} else {
 					alert("Item not found");
 					$("#iName").text("ITEM NOT FOUND");
-
+					$("#iDesc").text("If you\'re searching for something, it\'s not here");
 				}
 			}).catch(function(err){
 				console.log(err.code);

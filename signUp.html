@@ -10,7 +10,6 @@
   <head>
     <title>SBS - Sign In</title> 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -25,7 +24,7 @@
       firebase.initializeApp(config);
     </script>
     <!--Javascript file-->
-    <script src='file:///C:/Users/Camden/Documents/Github/src/validation.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='signUp.js'></script>
     <!--Material Design Lite-->
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
@@ -33,9 +32,8 @@
     <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>-->
     <!--CSS file-->
-    <!--<link rel='stylesheet' href='signUp.css'>-->
-    <link href="landing.css" rel="stylesheet" type="text/css" />
-
+    <link rel='stylesheet' href='signUp.css'>
+    <link href="landing.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div id = "topbardiv">
@@ -48,60 +46,19 @@
       <!--<h1><a class = "topbar">Link 3</a></h1>-->
     </div>
       <!--page content like forms here-->
-      <main class='mdl-layout__content'>
-        <div class='page-content'>
-          <!--Sign Up form-->
-          <div id='signUp'>
-              <h3>Sign Up</h3>
-              <!--<div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-                <input id='suName' class='mdl-textfield__input' pattern='[A-Za-z0-9_]{6,20}'>
-                <label class='mdl-textfield__label' for='suName'>Username</label>
-                <label class='mdl-textfield__error'>Contains a character that is not a letter or number or is not between 6-20 characters!</label>
-              </div>
-              <br>-->
-              <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-                <input id='suEmail' type='email' class='mdl-textfield__input' pattern='.+@mvla.net'>
-                <label class='mdl-textfield__label' for='suEmail'>Email</label>
-                <label class='mdl-textfield__error'>Is not a valid mvla email!</label>
-              </div>
-              <br>
-              <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-                <input id='suPass' type='password' class='mdl-textfield__input' pattern='.{8,}'>
-                <label class='mdl-textfield__label'>Password</label>
-                <label class='mdl-textfield__error'>Password must be more than 8 characters!</label>
-              </div>
-              <br>
-              <button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' onclick='createUser()'>Sign Up</button>
-              <a href='Github/nou/src/homePage/home.html'>Already have an account? Log in here!</a>
-          </div>
-          <br>
-          <!--log in form-->
-          <div id='logIn'>
-            <h3>Log In</h3>
-            <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-              <input id='liEmail' class='mdl-textfield__input' type='text'>
-              <label class='mdl-textfield__label' for='liEmail'>Email</label>
-            </div>
-            <br>
-            <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
-              <input id='liPass' class='mdl-textfield__input' type='password'>
-              <label class='mdl-textfield__label' for='liPass'>Password</label>
-            </div>
-            <br>
-            <button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' onclick='logIn()'>Log In</button>
-          </div>
-          <div class='mdl-button mdl-js-button mdl-button--raised'>Log Out</div>
-        </div>
+      <main class='page-content'>
+        <h3>Sign Up</h3>
+        Username: <input id="suUser" class="suInput"><br>
+        MVLA Email: <input id="suEmail" class="suInput"><br>
+        Password: <input id="suPass" class="suInput" type="password"><br>
+        <div id="suSubmit">Sign Up</div><br>
+        <h3>Log In</h3>
+        Username or Email: <input id="liUser" class="liInput"><br>
+        Password: <input id="liPass" class="liInput" type="password"><br>
+        <div id="liSubmit">Log In</div>
       </main>
       <!--footer w/ important links-->
-      <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer__left-section">
-          <div class="mdl-logo">Spartan Buy and Sell</div>
-          <ul class="mdl-mini-footer__link-list">
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Privacy & Terms</a></li>
-          </ul>
-        </div>
+      <footer>
         <!--social media tags-->
         <div id = "bottombardiv">
           <h1><a class = "bottombar">Contact Us</a></h1>
