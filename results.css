@@ -99,7 +99,10 @@
       margin-top: 2.5vw;
       box-shadow: 4px 4px 10px grey;
   }
-
+  /*.imageContainer {
+      width: 20vw;
+      height: 20vw;
+  }*/
   .resultImage {
       width: 24vw;
       margin-top: 3vw;

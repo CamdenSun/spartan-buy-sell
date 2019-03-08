@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        <link href="results.css" rel="stylesheet" type="text/css" />
-        <link href = "SBSFAV.png" rel = "icon">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <meta charset="utf-8">
+      <?xml version="1.0" encoding="UTF-8"?>
+      <link href="results.css" rel="stylesheet" type="text/css" />
+      <link href = "SBSFAV.png" rel = "icon">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyCXtqapHkeJOAwBjfX8C7z8c0NhDbgiYas",
+          authDomain: "spartanbuysell.firebaseapp.com",
+          databaseURL: "https://spartanbuysell.firebaseio.com",
+          projectId: "spartanbuysell",
+          storageBucket: "spartanbuysell.appspot.com",
+          messagingSenderId: "543261815218"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="results.js"></script>
     </head>
     <body>
         <div id = "topbardiv">
@@ -16,30 +32,17 @@
             <h1><a class = "topbar" id = "signin" href = "signUp.html">Sign In</a></h1>
             <!--<h1><a class = "topbar">Link 3</a></h1>-->
           </div>
-          <input placeholder="search here" id = "searchedSearchBar">
+          <form action="results.html" method="GET">
+            <input type="text" id="searchedSearchBar" placeholder="search for something..." name="itemName">
+          </form>
           <select id = "searchedFilterBar">
-                <option value = "Price" selected>Price</option>
-                <option value = "Likedness">Popularity</option>
-                <option value = "Time">Time</option>
+            <option value = "Price" selected>Price</option>
+            <option value = "Likedness">Popularity</option>
+            <option value = "Time">Time</option>
           </select>
           <div id = "resultsBox">
-          <div class = "resultCard">
-            <img class = "resultImage" src = "monkeyProduct.jpg">
-            <h2 class = "resultName">Akhand D         $ -10</h2>
+            
           </div>
-          <div class = "resultCard">
-                <img class = "resultImage" src = "monkeyProduct.jpg">
-                <h2 class = "resultName">Akhand D         $ -10</h2>
-              </div>
-        <div class = "resultCard">
-            <img class = "resultImage" src = "monkeyProduct.jpg">
-            <h2 class = "resultName">Akhand D         $ -10</h2>
-            </div>
-            <div class = "resultCard">
-                <img class = "resultImage" src = "monkeyProduct.jpg">
-                <h2 class = "resultName">Akhand D         $ -10</h2>
-        </div>
-        </div>
           <div id = "bottombardiv">
             <h1><a class = "bottombar">Contact Us</a></h1>
             <h1><a class = "bottombar">Instagram</a></h1>
