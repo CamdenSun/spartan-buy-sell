@@ -2,20 +2,34 @@ $(document).ready(function(){
 	var db = firebase.database();
 	var user = firebase.auth().currentUser;
 	function signUp(username, email, password){
-		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-		  console.log(error.code);
-		  console.log(error.message);
-		});
-		user.updateProfile({
-			displayName: username
-		});
+		db.ref("/users/").once("value").then(function(snap){
+			var users = snap.val();
+			var arr = Object.keys(users);
+			for (let i = 0; i < arr.length; i++){
+				if (users[arr[i]].email == email||users[arr[i]].username == username){
+					console.log("Email or Username already exists. Please enter another one or sign in.");
+				} else {
+					db.ref("/users/").push({
+						email: email,
+						username: username,
+						password: password
+					});
+				}
+			}
+		});	
 	}
 	function logIn(email, password){
-		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-		  console.log(error.code);
-		  console.log(error.message);
+		db.ref("/users/").once("value").then(function(snap){
+			var users = snap.val();
+			var arr = Object.keys(users);
+			for (let i = 0; i < arr.length; i++){
+				if ((users[arr[i]].email == email || users[arr[i]].username.toLowerCase() == email.toLowerCase()) && users[arr[i]].password == password){
+					document.getElementById("logIn").submit();
+				}
+			}
+		}).error(function(error){
+			alert(error.message);
 		});
-		console.log(user.displayName);
 	}
 	$("#suSubmit").click(function(){
 		var username = $("suUser").val();
