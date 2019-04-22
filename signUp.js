@@ -19,7 +19,52 @@ $(document).ready(function(){
 		console.log(user);
 	}
 	//checkUser();
-	
+	function signUp(username, email, password){
+		db.ref("/users/").once("value").then(function(snap){
+			var users = snap.val();
+			var arr = Object.keys(users);
+			for (let i = 0; i < arr.length; i++){
+				if (users[arr[i]].email == email||users[arr[i]].username == username){
+					console.log("Email or Username already exists. Please enter another one or sign in.");
+				} else {
+					db.ref("/users/").push({
+						email: email,
+						username: username,
+						password: password
+					});
+				}
+			}
+		});	
+	}
+	function logIn(email, password){
+		db.ref("/users/").once("value").then(function(snap){
+			var users = snap.val();
+			var arr = Object.keys(users);
+			for (let i = 0; i < arr.length; i++){
+				if ((users[arr[i]].email == email || users[arr[i]].username.toLowerCase() == email.toLowerCase()) && users[arr[i]].password == password){
+					document.getElementById("logIn").submit();
+				}
+			}
+		}).error(function(error){
+			alert(error.message);
+		});
+		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+		  console.log(error.code);
+		  console.log(error.message);
+		});
+		//checkUser();
+		/*user.updateProfile({
+			displayName: username
+		});*/
+	}
+	function logIn(email, password){
+		console.log(email + password)
+		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		});
+		checkUser();
+	}
 	$("#suSubmit").click(function(){
 		var username = $("#suUser").val();
 		var email = $("#suEmail").val();
