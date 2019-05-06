@@ -7,7 +7,7 @@ $(document).ready(function(){
 		var arr = Object.keys(items);
 		var count = 0;
 		for (let i = 0; i < arr.length; i++){
-			if (items[arr[i]].display.includes(name)||name.includes(items[arr[i]].display)){
+			if (items[arr[i]].display.includes(name.toLowerCase())||name.includes(items[arr[i]].display)){
 				count++;
 				var div = $("<div></div>").attr("class", "resultCard").attr("id", arr[i]);
 				$("#resultsBox").append(div);
@@ -22,6 +22,7 @@ $(document).ready(function(){
 				document.getElementById(arr[i]).append(disp, user, desc, price, img);*/
 			}
 		}
+		document.getElementById("")
 		if (count == 0){
 			$("#resultsBox").text("No results of " + name + " found.");
 		}
