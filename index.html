@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>SBS</title>
-  <link href="landing.css" rel="stylesheet" type="text/css" />
+  <link href="public/css/landing.css" rel="stylesheet" type="text/css">
   <link href = "SBSFAV.png" rel = "icon">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta charset='utf-8'>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+  <meta name="google-signin-client_id" content="877852929832-d296s3v8p23ed33pklrh82mvj9is8apv.apps.googleusercontent.com"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -33,7 +33,7 @@
     <h1><a class = "topbar" href="sell.html">Sell</a></h1>
     <h1><a class = "topbar">History</a></h1>
     <h1><a class = "topbar">About</a></h1>
-    <h1><a class = "topbar" id = "signin" href = "signUp.html">Sign In</a></h1>
+    <div class="g-signin2 topbar" data-onsuccess="onSignIn"></div>
     <!--<h1><a class = "topbar">Link 3</a></h1>-->
   </div>
 
