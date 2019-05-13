@@ -1,14 +1,19 @@
-const http = require('http');
+const db = firebase.database();
 
-const hostname = '127.0.0.1';
-const port = 3000;
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  var id = profile.getId();
+  var name = profile.getName();
+  var image = profile.getImageUrl();
+  var email = profile.getEmail();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+  console.log('ID: ' + id); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + name);
+  console.log('Image URL: ' + image);
+  console.log('Email: ' + email); // This is null if the 'email' scope is not present.
+  db.ref("users/" + id).set({
+  	name: name,
+  	image: image,
+  	email: email
+  });
+}
