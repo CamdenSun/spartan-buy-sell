@@ -7,13 +7,14 @@ $(document).ready(function(){
 		var arr = Object.keys(items);
 		var count = 0;
 		for (let i = 0; i < arr.length; i++){
-			if (items[arr[i]].display.includes(name.toLowerCase())||name.includes(items[arr[i]].display)){
+			if (items[arr[i]].display.toLowerCase().includes(name.toString().toLowerCase())||name.includes(items[arr[i]].display)){
 				count++;
 				var div = $("<div></div>").attr("class", "resultCard").attr("id", arr[i]);
 				$("#resultsBox").append(div);
 				var img = $("<img>").attr("src", items[arr[i]].photo).attr("class", "resultImage");
 				var title = $("<h2></h2>").text(items[arr[i]].display + " $" + items[arr[i]].price).attr("class", "resultName");
-				$("#" + arr[i]).append(img, title);
+				var desc = $("<p></p>").text(items[arr[i]].desc).attr("class", "resultDesc");
+				$("#" + arr[i]).append(img, title, desc);
 				/*var disp = $("<h3></h3>").text(items[arr[i]].display).attr("id", "iName");
 				var user = $("<p></p>").text(items[arr[i]].username).attr("id", "iUser");
 				var desc = $("<p></p>").text(items[arr[i]].description).attr("id", "iDesc");
