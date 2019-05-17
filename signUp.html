@@ -16,6 +16,8 @@
       };
       firebase.initializeApp(config);
     </script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="543261815218-l3ksd4agp1fhbolsis9hqi09ba2c07ep.apps.googleusercontent.com">
     <!--Javascript file-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='signUp.js'></script>
@@ -40,15 +42,11 @@
     </div>
       <!--page content like forms here-->
       <main class='page-content'>
-        <h3>Sign Up</h3>
-        Username: <input id="suUser" class="suInput"><br>
-        MVLA Email: <input id="suEmail" class="suInput"><br>
-        Password: <input id="suPass" class="suInput" type="password"><br>
-        <button id="suSubmit">Sign Up</button><br>
-        <h3>Log In</h3>
         Username or Email: <input id="liEmail" class="liInput"><br>
         Password: <input id="liPass" class="liInput" type="password"><br>
         <button id="liSubmit">Log In</button>
+        <p>Don't have an account? Sign in with google!</p>
+        <div class="g-signin2 topbar" data-onsuccess="onSignIn"></div>
       </main>
       <!--footer w/ important links-->
       <footer>

@@ -8,8 +8,6 @@
   <link href = "SBSFAV.png" rel = "icon">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <meta charset='utf-8'>
-  <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="877852929832-d296s3v8p23ed33pklrh82mvj9is8apv.apps.googleusercontent.com"></script>-->
   <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -27,20 +25,18 @@
   <script src="landing.js"></script>
 </head>
 <body>
-  <!--817598980919-8lpegusahu90ruu00chled03ec7k4t65.apps.googleusercontent.com-->
   <div id = "topbardiv">
     <img id = "barlogo" class = "topbar" src = "SBS LOGO.png">
-    <h1><a class = "topbar" href="profile.html">Profile</a></h1>
-    <h1><a class = "topbar" href="sell.html">Sell</a></h1>
-    <h1><a class = "topbar">History</a></h1>
-    <h1><a class = "topbar">About</a></h1>
-    <div class="g-signin2 topbar" data-onsuccess="onSignIn"></div>
-    <!--<h1><a class = "topbar">Link 3</a></h1>-->
+    <h1><a class = "topbar left" href="profile.html">Profile</a></h1>
+    <h1><a class = "topbar left" href="sell.html">Sell</a></h1>
+    <!--<h1><a class = "topbar">History</a></h1>
+    <h1><a class = "topbar">About</a></h1>-->
+    <h1><a class = "topbar right" href="signUp.html">Sign In/Sign Up</a></h1>
   </div>
 
   <div id = "searchbardiv">
     <img src = "SBS LOGO.svg" id = "biglogo">
-    <form action="results.html" method="GET">
+    <form action="marketplace.html" method="GET">
       <input type="text" id="searchbar" placeholder="search for something..." name="itemName">
     </form>
   </div>
