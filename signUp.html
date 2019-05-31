@@ -16,37 +16,61 @@
       };
       firebase.initializeApp(config);
     </script>
+    <meta name="google-signin-client_id" content="543261815218-2l7sfk11qrbh1neehv2h7f85tvkd3hlv.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="543261815218-l3ksd4agp1fhbolsis9hqi09ba2c07ep.apps.googleusercontent.com">
     <!--Javascript file-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src='signUp.js'></script>
-    <!--Material Design Lite-->
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
-    <!--Change color theme here-->
-    <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>-->
-    <!--CSS file-->
     <link rel='stylesheet' href='signUp.css'>
     <link href="landing.css" rel="stylesheet" type="text/css">
+    <script src='signUp.js'></script>
   </head>
   <body>
     <div id = "topbardiv">
-      <img id = "barlogo" class = "topbar" src = "SBS LOGO.png">
-      <h1><a class = "topbar">Marketplace</a></h1>
-      <h1><a class = "topbar">Sell</a></h1>
-      <h1><a class = "topbar">History</a></h1>
-      <h1><a class = "topbar">About</a></h1>
+      <a  href="landing.html"><img id = "barlogo" class = "topbar" src = "SBS LOGO.png"></a>
+      <h1><a class = "topbar" href="marketplace.html">Marketplace</a></h1>
+      <h1><a class = "topbar" href="sell.html">Sell</a></h1>
+      <h1><a class="topbar" href="profile.html">Profile</a>
       <h1><a class = "topbar" id = "signin" href = "signUp.html">Sign In</a></h1>
       <!--<h1><a class = "topbar">Link 3</a></h1>-->
     </div>
       <!--page content like forms here-->
       <main class='page-content'>
-        Username or Email: <input id="liEmail" class="liInput"><br>
-        Password: <input id="liPass" class="liInput" type="password"><br>
-        <button id="liSubmit">Log In</button>
-        <p>Don't have an account? Sign in with google!</p>
-        <div class="g-signin2 topbar" data-onsuccess="onSignIn"></div>
+        <!--p>Username or Email: <input id="liEmail" class="liInput"></p><br>
+        <p>Password: <input id="liPass" class="liInput" type="password"></p><br>
+        <button id="liSubmit">Log In</button-->
+        <p>Sign in with google!</p>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <script type="text/javascript">
+          function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            /*console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.*/
+            var user;
+            firebase.database().ref("users/").once("value").then(function(snap){
+              var obj = snap.val();
+              var objArr = Object.keys(obj);
+              console.log(objArr);
+              for (var i = 0; i < objArr.length; i++){
+                if (obj[objArr[i]].email == profile.getEmail()){
+                  user = obj[objArr[i]];
+                  console.log(obj[objArr[i]]);
+                  document.cookie = objArr[i];
+                }
+              }
+              if (user == null){
+                myRef = firebase.database().ref("users/").push();
+                firebase.database().ref("users/").push({
+                  name: profile.getName(),
+                  image: profile.getImageUrl(),
+                  email: profile.getEmail()
+                });
+                document.cookie = myRef.key();
+              }
+            });
+          }
+        </script>
       </main>
       <!--footer w/ important links-->
       <footer>

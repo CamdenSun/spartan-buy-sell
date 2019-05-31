@@ -17,16 +17,25 @@
 	  firebase.initializeApp(config);
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="landing.css" rel="stylesheet" type="text/css">
 	<script src='sell.js'></script>
 </head>
 <body>
-	<form id="itemForm">
-		Item Name: <input id="itemName" class="itemInput"><br>
-		Description: <input id="itemDesc" class="itemInput"><br>
-		Price: <input id="itemPrice" class="itemInput"><br>
-		Quantity: <input id="itemQuan" class="itemInput"><br>
-		Photo: <input id="itemPhoto" class="itemInput"><br>
+	<div id = "topbardiv">
+      <a  href="landing.html"><img id = "barlogo" class = "topbar" src = "SBS LOGO.png">
+      <h1><a class = "topbar" href="marketplace.html">Marketplace</a></h1>
+      <h1><a class = "topbar" href="sell.html">Sell</a></h1>
+      <h1><a class="topbar" href="profile.html">Profile</a>
+      <h1><a class = "topbar" id = "signin" href = "signUp.html">Sign In</a></h1>
+      <!--<h1><a class = "topbar">Link 3</a></h1>-->
+    </div>
+	<!--form id="itemForm"-->
+		<p>Item Name: <input id="itemName" class="itemInput"></p><br>
+		<p>Description: <input id="itemDesc" class="itemInput"></p><br>
+		<p>Price: <input id="itemPrice" class="itemInput"></p><br>
+		<p>Quantity: <input id="itemQuan" class="itemInput"></p><br>
+		<p>Photo: <input id="itemPhoto" class="itemInput"></p><br>
 		<button id="itemSubmit">Create Item</button>
-	</form>
+	<!--/form-->
 </body>
 </html>

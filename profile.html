@@ -2,23 +2,32 @@
 <html>
 <head>
 	<meta charset="utf-8">
+  <link href="landing.css" rel="stylesheet" type="text/css">
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCXtqapHkeJOAwBjfX8C7z8c0NhDbgiYas",
-        authDomain: "spartanbuysell.firebaseapp.com",
-        databaseURL: "https://spartanbuysell.firebaseio.com",
-        projectId: "spartanbuysell",
-        storageBucket: "spartanbuysell.appspot.com",
-        messagingSenderId: "543261815218"
-      };
-      firebase.initializeApp(config);
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="profile.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCXtqapHkeJOAwBjfX8C7z8c0NhDbgiYas",
+      authDomain: "spartanbuysell.firebaseapp.com",
+      databaseURL: "https://spartanbuysell.firebaseio.com",
+      projectId: "spartanbuysell",
+      storageBucket: "spartanbuysell.appspot.com",
+      messagingSenderId: "543261815218"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="profile.js"></script>
 </head>
 <body>
+  <div id = "topbardiv">
+    <a  href="landing.html"><img id = "barlogo" class = "topbar" src = "SBS LOGO.png"></a>
+    <h1><a class = "topbar" href="marketplace.html">Marketplace</a></h1>
+    <h1><a class = "topbar" href="sell.html">Sell</a></h1>
+    <h1><a class="topbar" href="profile.html">Profile</a>
+    <h1><a class = "topbar" id = "signin" href = "signUp.html">Sign In</a></h1>
+    <!--<h1><a class = "topbar">Link 3</a></h1>-->
+  </div>
 	<div id="profile">
     <div id="username"></div>
     <div id="profilePicture"></div>

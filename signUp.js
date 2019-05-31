@@ -1,25 +1,20 @@
 $(document).ready(function(){
+	/*function comparePush(ref, keyName, info){
+		firebase.database().ref(ref).once("value").then(function(snap){
+			var obj = snap.val();
+			var objArr = Object.keys(obj);
+			for (var i = 0; i < objArr.length; i++){
+				if (obj[objArr[i]][keyName] == info){
+					return obj[objArr[i]];
+				}
+			}
+		})
+	}*/
+	document.cookie = null;
 	// Create a callback which logs the current auth state
 	var db = firebase.database();
-	var user = firebase.auth().currentUser;
-	function checkUser(){
-		if (user != null) {
-			console.log("logged in");
-			var user = firebase.auth().currentUser;
-			  user.providerData.forEach(function (profile) {
-			    console.log("Sign-in provider: " + profile.providerId);
-			    console.log("  Provider-specific UID: " + profile.uid);
-			    console.log("  Name: " + profile.displayName);
-			    console.log("  Email: " + profile.email);
-			    console.log("  Photo URL: " + profile.photoURL);
-			  });
-		} else {
-			console.log("not logged in");
-		}
-		console.log(user);
-	}
 	//checkUser();
-	/*function signUp(username, email, password){
+	function signUp(username, email, password){
 		db.ref("/users/").once("value").then(function(snap){
 			var users = snap.val();
 			var arr = Object.keys(users);
@@ -35,9 +30,17 @@ $(document).ready(function(){
 				}
 			}
 		});	
-	}*/
-	function logIn(email, password){
-		/*db.ref("/users/").once("value").then(function(snap){
+	}
+	function onSignIn(googleUser) {
+	  console.log("HELLO");
+	  var profile = googleUser.getBasicProfile();
+	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	  console.log('Name: ' + profile.getName());
+	  console.log('Image URL: ' + profile.getImageUrl());
+	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+	}
+	/*function logIn(email, password){
+		db.ref("/users/").once("value").then(function(snap){
 			var users = snap.val();
 			var arr = Object.keys(users);
 			for (let i = 0; i < arr.length; i++){
@@ -51,34 +54,7 @@ $(document).ready(function(){
 		firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 		  console.log(error.code);
 		  console.log(error.message);
-		});*/
-		var provider = new firebase.auth.GoogleAuthProvider();
-		firebase.auth().signInWithPopup(provider).then(function(result) {
-		  // This gives you a Google Access Token. You can use it to access the Google API.
-		  var token = result.credential.accessToken;
-		  // The signed-in user info.
-		  var user = result.user;
-		  // ...
-		  console.log(user);
-		  console.log(token);
-		}).catch(function(error) {
-		  // Handle Errors here.
-		  var errorCode = error.code;
-		  var errorMessage = error.message;
-		  // The email of the user's account used.
-		  var email = error.email;
-		  // The firebase.auth.AuthCredential type that was used.
-		  var credential = error.credential;
-		  // ...
 		});
-	}
-	function logIn(email, password){
-		console.log(email + password)
-		firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-		  var errorCode = error.code;
-		  var errorMessage = error.message;
-		});
-		checkUser();
 	}
 	$("#suSubmit").click(function(){
 		var username = $("#suUser").val();
@@ -108,5 +84,5 @@ $(document).ready(function(){
 			var password = $("#liPass").val();
 			logIn(email, password);
 		}
-	});
+	});*/
 });

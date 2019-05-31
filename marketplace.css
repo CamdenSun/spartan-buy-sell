@@ -119,6 +119,10 @@
       padding-bottom: 1vw;
       font-size: 2vw;
   }
+  .resultDesc {
+    text-align: center;
+    margin: 1vw;
+  }
 
   #resultsBox {
       min-height: 50vh;

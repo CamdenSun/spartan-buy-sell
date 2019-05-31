@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	console.log(document.cookie);
 	var db = firebase.database();
 	var name = window.location.search.split("=");
 	name.splice(0, 1);
@@ -14,7 +15,8 @@ $(document).ready(function(){
 				var img = $("<img>").attr("src", items[arr[i]].photo).attr("class", "resultImage");
 				var title = $("<h2></h2>").text(items[arr[i]].display + " $" + items[arr[i]].price).attr("class", "resultName");
 				var desc = $("<p></p>").text(items[arr[i]].desc).attr("class", "resultDesc");
-				$("#" + arr[i]).append(img, title, desc);
+				var itemUser = $("<p></p>").text(items[arr[i]].user).attr("class", "resultName");
+				$("#" + arr[i]).append(img, title, itemUser, desc);
 				/*var disp = $("<h3></h3>").text(items[arr[i]].display).attr("id", "iName");
 				var user = $("<p></p>").text(items[arr[i]].username).attr("id", "iUser");
 				var desc = $("<p></p>").text(items[arr[i]].description).attr("id", "iDesc");
